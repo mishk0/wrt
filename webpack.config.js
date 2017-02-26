@@ -10,12 +10,12 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js/,
+                test: /\.js$/,
                 loader: 'babel-loader'
             },
             {
-                test: /yabble\.css$/,
-                loader: ExtractTextPlugin.extract({fallbackLoader: 'style-loader', loader: 'css-loader?modules' })
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({fallback: 'style-loader', loader: 'css-loader?modules' })
             }
         ]
     },
@@ -25,10 +25,7 @@ module.exports = {
         new webpack.ProvidePlugin({
             'React': 'react',
             'ReactDOM': 'react-dom',
-            'classNames': 'classnames',
-            '$': 'jquery',
-            '_': 'lodash',
-            'Tappable': 'react-tappable'
+            'classNames': 'classnames'
         })
     ]
 };
