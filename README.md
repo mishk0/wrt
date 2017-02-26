@@ -1,1 +1,1 @@
-# wrt
+# react + webpack
